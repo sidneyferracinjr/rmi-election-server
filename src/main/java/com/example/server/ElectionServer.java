@@ -4,6 +4,8 @@ import com.example.common.Election;
 
 import java.rmi.Naming;
 import java.rmi.RemoteException;
+import java.rmi.registry.LocateRegistry;
+import java.rmi.registry.Registry;
 import java.rmi.server.UnicastRemoteObject;
 import java.util.HashMap;
 import java.util.Map;
@@ -34,6 +36,7 @@ public class ElectionServer extends UnicastRemoteObject implements Election {
     public static void main(String[] args) {
         try {
             // Criação e registro do servidor RMI
+        	Registry registro = LocateRegistry.createRegistry(1099);
             ElectionServer server = new ElectionServer();
             Naming.rebind("rmi://localhost/ElectionService", server);
             System.out.println("Servidor de eleições pronto.");

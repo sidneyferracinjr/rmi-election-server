@@ -13,8 +13,10 @@ public class ElectionClient {
 
             try (// Scanner para leitura de entradas do usuário
 			Scanner scanner = new Scanner(System.in)) {
+            	
 				// Loop para inserir votos repetidamente
 				while (true) {
+					
 				    // Leitura do nome do candidato
 				    System.out.print("Digite o nome do candidato: ");
 				    String candidateName = scanner.nextLine();
